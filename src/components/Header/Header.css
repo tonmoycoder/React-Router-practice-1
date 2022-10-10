@@ -1,16 +1,15 @@
 .header a{
     text-decoration: none;
-    
     padding: 20px;
     background: rgba(179, 70, 16, 0.396);
     font-size: 24px;
     color: blue;
     font-weight: 700;
-    transition: all linear .4s;
-    -webkit-transition: all linear .4s;
-    -moz-transition: all linear .4s;
-    -ms-transition: all linear .4s;
-    -o-transition: all linear .4s;
+    transition: all ease-in-out .4s;
+    -webkit-transition: all ease-in-out .4s;
+    -moz-transition: all ease-in-out .4s;
+    -ms-transition: all ease-in-out .4s;
+    -o-transition: all ease-in-out .4s;
 }
 .header a:hover{
     color: brown;
