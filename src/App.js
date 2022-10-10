@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Products from './components/Products/Products';
 import About from './components/About/About';
 import Home from './components/Home/Home';
-import Header from './components/Header/Header';
 import Layout from './components/Layout/Layout';
 
 function App() {
@@ -14,9 +13,16 @@ function App() {
       children: [
         { path: 'home', element: <Home></Home> },
         { path: 'about', element: <About></About> },
-        { path: 'products', element: <Products></Products> },
+        {
+          path: 'products',
+          loader: async () => {
+            return fetch('https://jsonplaceholder.typicode.com/users');
+          },
+          element: <Products></Products>,
+        },
       ],
     },
+    { path: '*', element: <div>page out this world</div> },
   ]);
   return (
     <div className="App">
