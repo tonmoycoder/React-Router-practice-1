@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
 import UserDetails from './components/UserDetails/UserDetails';
 import Post from './components/Post/Post';
+import PostDetails from './components/PostDetails/PostDetails';
 
 function App() {
   const router = createBrowserRouter([
@@ -34,6 +35,12 @@ function App() {
           return fetch('https://jsonplaceholder.typicode.com/posts');
         }
         , element: <Post></Post> },
+        { path: '/post/:postId',
+        loader: async ({params}) =>{
+          return fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
+        },
+      element: <PostDetails></PostDetails>
+      }
       ],
     },
     { path: '*', element: <div>page out of this world</div> },

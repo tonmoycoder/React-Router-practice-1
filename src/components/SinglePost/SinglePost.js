@@ -10,17 +10,15 @@ const SinglePost = ({ post }) => {
   };
   return (
     <div className="post">
-      <p>{title} </p>
+      <p>{title}</p>
       <p>
         <small>{body}</small>
       </p>
-      {/* <Link to={`/post/${id}`}>
-        <button>show details</button>
+      <Link to={`/post/${id}`}>visit: {id}</Link>
+      <Link to={`/post/${id}`}>
+        <button>Show Details</button>
       </Link>
-       */}
-       <Link to={`/post/${id}`}>Visit : {id}</Link>
-        <button onClick={handleNavigate}>show details</button>
-      
+      <button onClick={handleNavigate}>Show Details2</button>
     </div>
   );
 };
